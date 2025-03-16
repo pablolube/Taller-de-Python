@@ -29,15 +29,15 @@ correct_answers_index = [1, 2, 0, 3, 1]
 # El usuario deberá contestar 3 preguntas
 puntaje=0
 
-for _ in range(3):
 
-    # Se selecciona una pregunta aleatoria
-    question_index = random.randint(0, len(questions) - 1)
+# Se selecciona una pregunta aleatoria
+questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
 
-    # Se muestra la pregunta y las respuestas posibles
-    print(questions[question_index])
-    for i, answer in enumerate(answers[question_index]):
-        print(f"{i + 1}. {answer}")
+for question, answers_option, correct_answer in questions_to_ask:
+    print(question)
+   # Se muestra la pregunta y las respuestas posibles
+    for i,answers_option in answers:
+        print(f"{i + 1}. {answers_option}")
 
   
 # El usuario tiene 2 intentos para responder correctamente
@@ -45,14 +45,14 @@ for _ in range(3):
         user_answer = (input("Respuesta: ")) 
 # Verifica si el dato ingresado por el usuario es un dato dentro del rango de opciones de respuesta
 
-        if  not user_answer.isdigit() or (int(user_answer) - 1) not in range(0,len(answers[question_index])):
+        if  not user_answer.isdigit() or (int(user_answer) - 1) not in range(0,len(answers_option)):
             print("Respuesta no válida")
             sys.exit(1)
         else:
             user_answer=int(user_answer)-1
         
         # Se verifica si la respuesta es correcta
-        if user_answer == correct_answers_index[question_index]:
+        if user_answer == correct_answer:
             print("¡Correcto!")
             puntaje+=1
             break
@@ -61,7 +61,7 @@ for _ in range(3):
         # se muestra la respuesta correcta
         
         print("Incorrecto. La respuesta correcta es:")
-        print(answers[question_index][correct_answers_index[question_index]])
+        print(answers_option[correct_answer])
         puntaje-=0.5
         print()
  
