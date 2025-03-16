@@ -62,10 +62,10 @@ for _ in range(3):
         
         print("Incorrecto. La respuesta correcta es:")
         print(answers[question_index][correct_answers_index[question_index]])
-        puntaje-=1 
+        puntaje-=0.5
         print()
  
     # Se imprime un blanco al final de la pregunta
-print(f"El puntaje total es")
+print("El puntaje total es ")
 print(puntaje)
 print("")
