@@ -1,7 +1,6 @@
 import random
 import sys
 
-
 # Preguntas para el juego
 questions = [
     "¿Qué función se usa para obtener la longitud de una cadena en Python?",
@@ -27,45 +26,42 @@ answers = [
 correct_answers_index = [1, 2, 0, 3, 1]
 
 # El usuario deberá contestar 3 preguntas
-puntaje=0
-
+puntaje = 0
 
 # Se selecciona una pregunta aleatoria
 questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
 
 for question, answers_option, correct_answer in questions_to_ask:
     print(question)
-   # Se muestra la pregunta y las respuestas posibles
-    for i,answers_option in answers:
-        print(f"{i + 1}. {answers_option}")
+    # Se muestra la pregunta y las respuestas posibles
+    for i, answer in enumerate(answers_option):
+        print(f"{i + 1}. {answer}")
 
-  
-# El usuario tiene 2 intentos para responder correctamente
+    # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = (input("Respuesta: ")) 
-# Verifica si el dato ingresado por el usuario es un dato dentro del rango de opciones de respuesta
+        user_answer = input("Respuesta: ")
 
-        if  not user_answer.isdigit() or (int(user_answer) - 1) not in range(0,len(answers_option)):
+        # Verifica si el dato ingresado por el usuario es un dato dentro del rango de opciones de respuesta
+        if not user_answer.isdigit() or (int(user_answer) - 1) not in range(len(answers_option)):
             print("Respuesta no válida")
             sys.exit(1)
         else:
-            user_answer=int(user_answer)-1
-        
+            user_answer = int(user_answer) - 1
+
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answer:
             print("¡Correcto!")
-            puntaje+=1
+            puntaje += 1
             break
+        else:
+          puntaje -= 0.5
     else:
-        # Si el usuario no responde correctamente después de 2 intentos,
-        # se muestra la respuesta correcta
-        
-        print("Incorrecto. La respuesta correcta es:")
-        print(answers_option[correct_answer])
-        puntaje-=0.5
-        print()
- 
-    # Se imprime un blanco al final de la pregunta
-print("El puntaje total es ")
-print(puntaje)
-print("")
+    # Si el usuario no responde correctamente después de 2 intentos,
+    # se muestra la respuesta correcta
+      print("Incorrecto. La respuesta correcta es:")
+      print(answers_option[correct_answer])
+      print(f"Tu puntaje parcial es: {puntaje}")
+
+
+# Al final, se muestra el puntaje final
+print(f"Tu puntaje final es: {puntaje}")
