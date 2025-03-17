@@ -17,9 +17,9 @@ def lista_aleatoria(minimo, maximo, cantidad):
     return lista
 
 # Ejemplo de uso
-minimo = int(input("Ingrese el valor mínimo: "))
-maximo = int(input("Ingrese el valor máximo: "))
-cantidad = int(input("Ingrese la cantidad de números a generar: "))
+minimo = int(float((input("Ingrese el valor mínimo: "))))
+maximo = int(float(input("Ingrese el valor máximo: ")))
+cantidad = int(float(input("Ingrese la cantidad de números a generar: ")))
 lista = lista_aleatoria(minimo, maximo, cantidad)
 
 # Llamar a la función par_impar

@@ -1,6 +1,6 @@
 #7. Escribe un programa que tome una lista de números enteros como entrada del usuario. Luego, convierte cada número en la lista a string 
 # #  únelos en una sola cadena, separados por guiones ('-'). Sin embargo, excluye cualquier número que sea múltiplo de 3 de la cadena final.
-
+'''
 def lista_numeros():
     lista = []
     while True:
@@ -15,21 +15,9 @@ def lista_numeros():
             numero = int(numero)
             lista.append(numero)
     return lista
-
-
+'''
+       
 def convertir_string(lista):
-#Convierte numeros string
-    cadena=''
-    for i in  lista:
-        if  i %3 ==0:
-            continue
-
-        elif cadena:
-            cadena+='-'
-        cadena+=str(i)
-    print(cadena)   
-         
-def convertir_string2(lista):
 #Convierte numeros string
     cadena=''
     for i in  lista:
@@ -41,6 +29,6 @@ def convertir_string2(lista):
     cadena='-'.join(cadena)    
     print(f'cadena 2 {cadena}')
   
-#lista=lista_numeros()
+
 lista=[3, 7, 12, 18, 25, 30, 41, 50, 60, 77]
-convertir_string2(lista)        
+convertir_string(lista)        
