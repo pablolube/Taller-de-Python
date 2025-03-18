@@ -26,7 +26,7 @@ answers = [
 correct_answers_index = [1, 2, 0, 3, 1]
 
 # El usuario deberá contestar 3 preguntas
-puntaje = 0
+points = 0
 
 # Se selecciona una pregunta aleatoria
 questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
@@ -51,17 +51,18 @@ for question, answers_option, correct_answer in questions_to_ask:
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answer:
             print("¡Correcto!")
-            puntaje += 1
+            points += 1
             break
         else:
-          puntaje -= 0.5
+            if points >=0.5:
+                points -= 0.5
     else:
     # Si el usuario no responde correctamente después de 2 intentos,
     # se muestra la respuesta correcta
       print("Incorrecto. La respuesta correcta es:")
       print(answers_option[correct_answer])
-      print(f"Tu puntaje parcial es: {puntaje}")
+      print(f"Tu puntaje parcial es: {points}")
 
 
 # Al final, se muestra el puntaje final
-print(f"Tu puntaje final es: {puntaje}")
+print(f"Tu puntaje final es: {points}")
