@@ -1,5 +1,4 @@
 import random
-import sys
 
 # Preguntas para el juego
 questions = [
@@ -44,7 +43,7 @@ for question, answers_option, correct_answer in questions_to_ask:
         # Verifica si el dato ingresado por el usuario es un dato dentro del rango de opciones de respuesta
         if not user_answer.isdigit() or (int(user_answer) - 1) not in range(len(answers_option)):
             print("Respuesta no válida")
-            sys.exit(1)
+            exit(1)
         else:
             user_answer = int(user_answer) - 1
 
@@ -52,6 +51,7 @@ for question, answers_option, correct_answer in questions_to_ask:
         if user_answer == correct_answer:
             print("¡Correcto!")
             points += 1
+            print(f"Tu puntaje parcial es: {points}")
             break
         else:
             if points >=0.5:
