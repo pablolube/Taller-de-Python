@@ -1,4 +1,3 @@
 # Ignorar carpetas del entorno virtual
-# Ignorar entorno virtual
 venv/
 .venv/
