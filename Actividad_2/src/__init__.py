@@ -111,3 +111,14 @@ def codigo_descuento(usuario,fecha):
     else: 
         print("El usuario supera los 15 caracteres")
 
+
+# 8. Identificación de anagrama
+def son_anagramas(palabra1, palabra2):
+    
+    if sorted(palabra1) == sorted(palabra2):
+        print("Son anagramas")
+    else:
+        print("No son anagramas")
+
+#9. 
+        
