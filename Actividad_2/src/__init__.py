@@ -89,3 +89,25 @@ def cuenta_palabras(texto):
     for palabra_buscar, cantidad in contador.items():
         print(f"Menciones de '{palabra_buscar}': {cantidad}")
 
+#7 Generador de códigos de descuento
+
+import string
+
+import string
+def codigo_descuento(usuario,fecha):
+    if len(usuario)<=15:
+       
+        usuario=usuario.upper()
+        fecha=str(fecha).replace("-","")
+        
+        codigo=usuario+"-"+fecha
+
+        caracteres=string.ascii_uppercase + string.digits
+
+        restantes=30-len(codigo)
+        
+        codigo += "-" + ''.join(random.choices(caracteres, k=restantes))
+        print(codigo)       
+    else: 
+        print("El usuario supera los 15 caracteres")
+
