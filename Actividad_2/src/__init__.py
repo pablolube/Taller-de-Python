@@ -26,6 +26,7 @@ def titulo_mas_largo(titulos):
 
 
 #4 Función valida usuario
+
 def validacion_usuario(usuario):
     #Inicializo variables
     cumple=False
@@ -53,4 +54,38 @@ def validacion_usuario(usuario):
     else:
            print("El nombre de usuario no cumple con los requisitos.")
 
-#
+
+#5 Funcion de velocidad de reacción en un juego
+
+def tiempo_reaccion(tiempo):
+        tiempo=int(tiempo)
+        reaccion=""
+
+        #Menos de 200 ms: Rápido 
+        if tiempo <200:
+            reaccion="Rápido"
+        elif 200<=tiempo<=500:
+
+        #Entre 200 y 500 ms: Normal
+            reaccion="Normal"
+
+        #Más de 500 ms: Lento
+        else:
+            reaccion="Lento"
+        print (f"categoria: {reaccion}")
+
+#6 Análisis de descripciones de una plataforma de stream
+
+def cuenta_palabras(texto):
+    palabras_buscar=["música","charla","entretenimiento"]
+    contador={"música":0,"charla":0,"entretenimiento":0}
+
+    for line in texto:
+        palabras = line.lower.split()
+        for palabra_buscar in palabras_buscar:
+            if palabra_buscar in palabras:
+                contador[palabra_buscar]+=1
+    # Imprimir las menciones
+    for palabra_buscar, cantidad in contador.items():
+        print(f"Menciones de '{palabra_buscar}': {cantidad}")
+
