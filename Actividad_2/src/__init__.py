@@ -1,3 +1,6 @@
+#importo librerias 
+import string
+import random
 
 #1 Función para filtrar lineas cuyas segunda palabra inicia con una vocal
 def filtrar_2dapalabra_vocal(text):
@@ -91,9 +94,6 @@ def cuenta_palabras(texto):
 
 #7 Generador de códigos de descuento
 
-import string
-
-import string
 def codigo_descuento(usuario,fecha):
     if len(usuario)<=15:
        
