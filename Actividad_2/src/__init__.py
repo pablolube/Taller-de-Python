@@ -120,5 +120,38 @@ def son_anagramas(palabra1, palabra2):
     else:
         print("No son anagramas")
 
-#9. 
+#9. Limpieza de Datos para un Sistema de Clientes
+def elimino_nulos(lista):
+    #Elimino elementos nulos
+        lista =[elemento for elemento in lista if elemento not in [None, "", " "]]
+        return lista
+    
+def elimino_blancos(lista):
+    #Elimino espacios en blanco al inicio y final
+        lista =[elemento.strip() for elemento in lista]
+        #Elimino espacios en blanco en el medio
+        lista =[elemento.replace("  "," ") for elemento in lista]
+        return lista
         
+    
+
+    #Capitalizo primera letra
+def capitalizo_palabras(lista):
+        lista=[elemento.title() for elemento in lista]
+        return lista
+
+def elimino_repetidos(lista):
+    #Elimino repetidos
+        lista_sin_repetidos=[]
+        for elemento in lista:
+            if elemento not in lista_sin_repetidos:
+                lista_sin_repetidos.append(elemento)
+        return lista_sin_repetidos
+
+def limpieza_nombres(nombres):
+        nombres=elimino_nulos(nombres)
+        nombres=elimino_blancos(nombres)
+        nombres=capitalizo_palabras(nombres)
+        nombres=elimino_repetidos(nombres)
+        return nombres
+#10  Limpieza de Datos para un Sistema de Clientes
