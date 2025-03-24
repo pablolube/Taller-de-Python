@@ -84,7 +84,7 @@ def cuenta_palabras(texto):
     contador={"música":0,"charla":0,"entretenimiento":0}
 
     for line in texto:
-        palabras = line.lower.split()
+        palabras = line.split()
         for palabra_buscar in palabras_buscar:
             if palabra_buscar in palabras:
                 contador[palabra_buscar]+=1
