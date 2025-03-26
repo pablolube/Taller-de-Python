@@ -70,7 +70,11 @@ def validacion_usuario(usuario):
 
 def tiempo_reaccion(tiempo):
         tiempo=int(tiempo)
-        reaccion=""         
+         
+        if  tiempo <0:
+            print("Tiempo ingresado es menor a 0, vuelva a ingresar")
+            return
+        reaccion="" 
         #Menos de 200 ms: Rápido 
         if  0<= tiempo <200:
             reaccion="Rápido"
@@ -92,9 +96,9 @@ def cuenta_palabras(texto):
     contador={"música":0,"charla":0,"entretenimiento":0}
 
     for line in texto:
-        palabras = line.split()
+        palabras = line.lower().split()
         for palabra_buscar in palabras_buscar:
-            if palabra_buscar in palabras:
+            if palabra_buscar.lower() in palabras:
                 contador[palabra_buscar]+=1
     # Imprimir las menciones
     for palabra_buscar, cantidad in contador.items():
