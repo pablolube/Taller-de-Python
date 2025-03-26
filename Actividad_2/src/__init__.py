@@ -30,8 +30,8 @@ def buscar_regla(reglas,palabra):
     reglas=reglas.split('\n')
     for regla in reglas:
         if palabra.lower() in regla.lower():
-            print(reglas)
-    return
+            print(regla)
+
               
 #4 Función valida usuario
 
@@ -40,6 +40,7 @@ def validacion_usuario(usuario):
     cumple=False
     cant_minuscula=0
     cant_mayuscula=0
+    cant_numeros=0
     i=0
     
     #Valido que al menos tenga 5 caracteres 
@@ -53,8 +54,10 @@ def validacion_usuario(usuario):
             #sumo si encuentra mayuscula
             if char.islower():
                     cant_mayuscula+=1
-            #
-            if cant_minuscula>=1  and cant_mayuscula>=1:
+            if char.isdigit():
+                cant_numeros+=1
+                 
+            if cant_minuscula>=1  and cant_mayuscula>=1 and cant_numeros>=1:
                 cumple=True
             i=i+1
     if cumple:
@@ -67,19 +70,19 @@ def validacion_usuario(usuario):
 
 def tiempo_reaccion(tiempo):
         tiempo=int(tiempo)
-        reaccion=""
-
+        reaccion=""         
         #Menos de 200 ms: Rápido 
-        if tiempo <200:
+        if  0<= tiempo <200:
             reaccion="Rápido"
-        elif 200<=tiempo<=500:
 
         #Entre 200 y 500 ms: Normal
+        elif 200<=tiempo<=500:      
             reaccion="Normal"
 
         #Más de 500 ms: Lento
         else:
-            reaccion="Lento"
+             reaccion="Lento"
+               
         print (f"categoria: {reaccion}")
 
 #6 Análisis de descripciones de una plataforma de stream
