@@ -5,29 +5,34 @@ import random
 #1 Función para filtrar lineas cuyas segunda palabra inicia con una vocal
 def filtrar_2dapalabra_vocal(text):
     vocal=("AEIOUaeiou")
-    lines= text.split('\n')
-    for line in lines: 
-        if len(line)>2:
-            word=line.split(' ')
-            if word[1][0] in vocal:
-                print(line)
+    lineas= text.split('\n')
+    for linea in lineas: 
+        if len(linea)>=2:
+            palabra=linea.split(' ')
+            if palabra[1][0] in vocal:
+                print(linea)
 
 
 #2 Función Título más largo
 def titulo_mas_largo(titulos):
     maximo=0
-    titulo_max =[]
+    titulo_max =""
     for titulo in titulos:
-        word=titulo.split(' ')
-        largo=len(word)
-        if largo==maximo:
-            titulo_max.append(titulo)
-        elif largo>maximo:
+        palabra=titulo.split(' ')
+        largo=len(palabra)
+        if  largo>=maximo:
             maximo=largo
-            titulo_max=[titulo]
+            titulo_max=titulo
     return titulo_max
 
-
+#3 Imprime reglas que cumplen con palabra
+def buscar_regla(reglas,palabra):
+    reglas=reglas.split('\n')
+    for regla in reglas:
+        if palabra.lower() in regla.lower():
+            print(reglas)
+    return
+              
 #4 Función valida usuario
 
 def validacion_usuario(usuario):
