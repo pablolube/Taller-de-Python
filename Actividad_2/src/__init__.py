@@ -460,10 +460,14 @@ def procesar_ronda(ronda_datos, tabla_general,puntos):
 
 #FUNCION PRINCIPAL - IMPRIMIR
 def imprimir_tabla(tabla):
+    
+    #Imprimo encabezado
     print(f"{'Jugador':<10} {'Kills':<7} {'Asists':<7} {'Deaths':<7} {'MVPs':<7} {'Puntajes':<10}")
     print("-" * 50)
     
+    #reordena la tabla por el puntaje descendente 
     tabla_ordenada = sorted(tabla.items(), key=lambda x: x[1]['Puntajes'], reverse=True)
 
+    #Imprimo tabla
     for jugador, rdo in tabla_ordenada:
      print(f"{jugador:<10} {rdo['kills']:<7} {rdo['assists']:<7} {rdo['deaths']:<7} {rdo['MVPs']:<7} {rdo['Puntajes']:<10}")
