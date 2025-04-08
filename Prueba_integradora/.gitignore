@@ -1,0 +1,6 @@
+# Ignorar carpetas del entorno virtual
+.env/
+env/
+.venv/
+venv/
+Data/data_clean/individuales_unificado
