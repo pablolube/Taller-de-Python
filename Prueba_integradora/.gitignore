@@ -3,4 +3,7 @@
 env/
 .venv/
 venv/
+Data\data_raw
+
+
 
